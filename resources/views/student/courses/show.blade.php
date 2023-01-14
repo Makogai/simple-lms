@@ -222,8 +222,13 @@
         <div class="card-body">
             <p class="text-large-emphasis">{{ $lesson->short_text }}</p>
             <p class="text-large-emphasis">{{ $lesson->long_text }}</p>
+            @if($lesson->video)
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{ $lesson->video->getUrl() }}" allowfullscreen></iframe>
+                </div>
+            @endif
             <div class="example">
-
+                <h3 class="my-3">{{ trans('global.additional.files') }}</h3>
                 @foreach($lesson->file as $key => $media)
                     <tr>
                         <td>

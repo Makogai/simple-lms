@@ -55,7 +55,7 @@ class StudentController extends Controller
         // parse the request
         $answers = $request->except(['_token', 'test_id']);
         $correctAnswers = 0;
-        $totalQuestions = 0;
+        $totalPoints = 0;
         foreach ($answers as $questionId => $answerId) {
             $question = $test->questions->where('id', $questionId)->first();
             $question->load('questionOptions');
@@ -64,7 +64,7 @@ class StudentController extends Controller
             if($correctAnswer->id == $answerId){
                 $correctAnswers++;
             }
-            $totalQuestions++;
+            $totalPoints += $question->points;
         }
 
         // Save the reulst to test results table
@@ -72,7 +72,7 @@ class StudentController extends Controller
             'student_id' => auth()->user()->id,
             'test_id' => $test->id,
             'score' => $correctAnswers,
-            'total_questions' => $totalQuestions,
+            'question_count' => $totalPoints,
         ]);
 
         return redirect()->route('learn.results');

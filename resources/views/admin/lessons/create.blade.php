@@ -251,13 +251,13 @@ Dropzone.options.thumbnailDropzone = {
     var uploadedFileMap = {}
 Dropzone.options.fileDropzone = {
     url: '{{ route('admin.lessons.storeMedia') }}',
-    maxFilesize: 2, // MB
+    maxFilesize: 20, // MB
     addRemoveLinks: true,
     headers: {
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
     },
     params: {
-      size: 2
+      size: 20
     },
     success: function (file, response) {
       $('form').append('<input type="hidden" name="file[]" value="' + response.name + '">')

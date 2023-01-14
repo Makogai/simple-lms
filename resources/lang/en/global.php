@@ -322,4 +322,15 @@ return [
     'leave'                          => 'Leave',
     'calendar'                       => 'Calendar',
     'messenger'                      => 'Messenger',
+
+    'additional' => [
+        'result' => 'Result',
+        'date' => 'Date',
+        'noCourses' => 'No courses',
+        'openCourse' => 'Open course',
+        'openTest' => 'Open test',
+        'viewResults' => 'View results',
+        'files' => 'Files',
+        'welcome' => 'Welcome to Muudl platform, ',
+    ]
 ];

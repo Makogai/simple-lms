@@ -14,9 +14,9 @@
                     </div>
                     <p class="card-text">{{ $test->description }}</p>
                     @if($test->has_taken_test)
-                        <a href="{{ route('learn.results') }}" class="btn btn-warning">View results</a>
+                        <a href="{{ route('learn.results') }}" class="btn btn-warning">{{ trans('global.additional.viewResults') }}</a>
                     @else
-                    <a class="btn btn-primary" href="{{ route('learn.test.show', $test->id) }}">Open test</a>
+                    <a class="btn btn-primary" href="{{ route('learn.test.show', $test->id) }}">{{ trans('global.additional.openTest') }}</a>
                     @endif
                 </div>
             </div>

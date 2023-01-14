@@ -55,7 +55,7 @@
                                 {{ $testResult->student->name ?? '' }}
                             </td>
                             <td>
-                                {{ $testResult->score ?? '' }}
+                                {{ $testResult->score ?? '' }}/ {{ $testResult->question_count ?? '' }}
                             </td>
                             <td>
                                 @can('test_result_show')
@@ -136,7 +136,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

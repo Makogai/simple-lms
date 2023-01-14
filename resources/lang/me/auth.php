@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'failed'   => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed'   => 'Ovi akreditivi se ne poklapaju sa našom evidencijom.',
+    'password' => 'Navedena lozinka je netačna.',
+    'throttle' => 'Previše pokušaja prijave. Molimo pokušajte ponovo za :seconds sekundi.',
 ];
